@@ -200,16 +200,14 @@ namespace
             LoadFlags |= FT_LOAD_TARGET_LIGHT;
         else if (UserFlags & ImGuiFreeTypeBuilderFlags_MonoHinting)
             LoadFlags |= FT_LOAD_TARGET_MONO;
+        else if (UserFlags & ImGuiFreeTypeBuilderFlags_LcdHinting)
+            LoadFlags |= FT_LOAD_TARGET_LCD;
         else
             LoadFlags |= FT_LOAD_TARGET_NORMAL;
 
-        if (UserFlags & ImGuiFreeTypeBuilderFlags_RenderModeLight)
-            RenderMode = FT_LOAD_TARGET_LIGHT;
-        else if (UserFlags & ImGuiFreeTypeBuilderFlags_RenderModeLcd)
-            RenderMode = FT_LOAD_TARGET_LCD;
-        else if (UserFlags & ImGuiFreeTypeBuilderFlags_RenderModeLcdV)
-            RenderMode = FT_LOAD_TARGET_LCD_V;
-        else if (UserFlags & ImGuiFreeTypeBuilderFlags_Monochrome)
+        if (UserFlags & ImGuiFreeTypeBuilderFlags_LcdHinting) {
+            RenderMode = FT_RENDER_MODE_LCD;
+        } else if (UserFlags & ImGuiFreeTypeBuilderFlags_Monochrome)
             RenderMode = FT_RENDER_MODE_MONO;
         else
             RenderMode = FT_RENDER_MODE_NORMAL;

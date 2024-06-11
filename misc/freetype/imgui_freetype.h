@@ -27,10 +27,8 @@ enum ImGuiFreeTypeBuilderFlags
     ImGuiFreeTypeBuilderFlags_Oblique       = 1 << 6,   // Styling: Should we slant the font, emulating italic style?
     ImGuiFreeTypeBuilderFlags_Monochrome    = 1 << 7,   // Disable anti-aliasing. Combine this with MonoHinting for best results!
     ImGuiFreeTypeBuilderFlags_LoadColor     = 1 << 8,   // Enable FreeType color-layered glyphs
-    ImGuiFreeTypeBuilderFlags_Bitmap        = 1 << 9,    // Enable FreeType bitmap glyphs
-    ImGuiFreeTypeBuilderFlags_RenderModeLight = 1 << 10
-    ImGuiFreeTypeBuilderFlags_RenderModeLcd = 1 << 11
-    ImGuiFreeTypeBuilderFlags_RenderModeLcdV = 1 << 12
+    ImGuiFreeTypeBuilderFlags_Bitmap        = 1 << 9,   // Enable FreeType bitmap glyphs
+    ImGuiFreeTypeBuilderFlags_LcdHinting    = 1 << 10   // Enable FreeType LCD subpixel rendering
 };
 
 namespace ImGuiFreeType
